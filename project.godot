@@ -11,9 +11,22 @@ config_version=5
 [application]
 
 config/name="ConsoleRUN"
+run/main_scene="uid://md1uigvqhepm"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GameGUI/plugin.cfg")
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
+anti_aliasing/quality/msaa_2d=2
 anti_aliasing/quality/use_taa=true

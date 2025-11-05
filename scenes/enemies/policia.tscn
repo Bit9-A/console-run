@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1r8rboaf0wvx"]
+
+[ext_resource type="Script" uid="uid://gin33t258as7" path="res://scripts/enemies/PoliceCar.gd" id="1_5gybj"]
+[ext_resource type="Texture2D" uid="uid://bvgaymsf7ilmw" path="res://assets/sprites/cars/policiaS.png" id="1_niy5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gybj"]
+size = Vector2(318, 77)
+
+[node name="Policia" type="CharacterBody2D"]
+script = ExtResource("1_5gybj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.303)
+texture = ExtResource("1_niy5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, 12.5)
+shape = SubResource("RectangleShape2D_5gybj")

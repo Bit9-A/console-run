@@ -1,0 +1,34 @@
+{
+  "questions": [
+    {
+      "question": "¿Qué protocolo se utiliza comúnmente para la transferencia segura de archivos?",
+      "answers": ["FTP", "HTTP", "SFTP", "SMTP"],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "En programación, ¿qué significa 'DRY'?",
+      "answers": [
+        "Data Relay Yield",
+        "Don't Repeat Yourself",
+        "Direct Rendering Yoke",
+        "Debug, Review, Yield"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "¿Cuál de los siguientes NO es un lenguaje de programación?",
+      "answers": ["Python", "HTML", "Java", "C++"],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "¿Qué es un 'ataque de fuerza bruta'?",
+      "answers": [
+        "Un virus que daña el hardware",
+        "Engañar a alguien para que revele su contraseña",
+        "Inundar un servidor con tráfico",
+        "Probar sistemáticamente todas las contraseñas posibles"
+      ],
+      "correct_answer_index": 3
+    }
+  ]
+}
