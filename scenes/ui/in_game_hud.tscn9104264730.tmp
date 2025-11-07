@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc7e4jdblk4ks"]
+
+[ext_resource type="Script" uid="uid://cyafhoe4ujyv6" path="res://scripts/ui/HUD.gd" id="1_7q0fu"]
+[ext_resource type="PackedScene" uid="uid://bo45njai5ommj" path="res://scenes/levels/laptop.tscn" id="2_7q0fu"]
+
+[node name="InGameHUD" type="CanvasLayer" node_paths=PackedStringArray("distance_label", "question_label", "answers_container")]
+follow_viewport_enabled = true
+script = ExtResource("1_7q0fu")
+distance_label = NodePath("DistanceLabel")
+question_label = NodePath("QuestionPanel/QuestionLabel")
+answers_container = NodePath("QuestionPanel/AnswersBox")
+
+[node name="Laptop" parent="." instance=ExtResource("2_7q0fu")]
+modulate = Color(0.69803923, 0.69803923, 0.69803923, 0.6509804)
+position = Vector2(153, 221)
+
+[node name="DistanceLabel" type="Label" parent="."]
+offset_left = 570.0
+offset_top = 7.0
+offset_right = 610.0
+offset_bottom = 30.0
+
+[node name="QuestionPanel" type="Panel" parent="."]
+offset_left = 320.0
+offset_top = 126.0
+offset_right = 601.0
+offset_bottom = 327.0
+
+[node name="QuestionLabel" type="Label" parent="QuestionPanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 281.0
+offset_bottom = 57.0
+
+[node name="AnswersBox" type="VBoxContainer" parent="QuestionPanel"]
+custom_minimum_size = Vector2(0, 93)
+layout_mode = 0
+offset_left = 18.0
+offset_top = 93.0
+offset_right = 259.0
+offset_bottom = 185.0
+
+[node name="AnswerButton1" type="Button" parent="QuestionPanel/AnswersBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+
+[node name="AnswerButton2" type="Button" parent="QuestionPanel/AnswersBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+
+[node name="AnswerButton3" type="Button" parent="QuestionPanel/AnswersBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+
+[node name="AnswerButton4" type="Button" parent="QuestionPanel/AnswersBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8

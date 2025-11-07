@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc7e4jdblk4ks"]
+
+[ext_resource type="Script" uid="uid://cyafhoe4ujyv6" path="res://scripts/ui/HUD.gd" id="1_7q0fu"]
+[ext_resource type="PackedScene" uid="uid://dju823glcn58k" path="res://scenes/ui/GUI_Dialog.tscn" id="1_pxmas"]
+[ext_resource type="PackedScene" uid="uid://bo45njai5ommj" path="res://scenes/levels/laptop.tscn" id="2_7q0fu"]
+
+[node name="InGameHUD" type="CanvasLayer"]
+script = ExtResource("1_7q0fu")
+
+[node name="GuiDialog" parent="." instance=ExtResource("1_pxmas")]
+
+[node name="Laptop" parent="." instance=ExtResource("2_7q0fu")]
+modulate = Color(0.69803923, 0.69803923, 0.69803923, 0.6509804)
+position = Vector2(153, 221)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

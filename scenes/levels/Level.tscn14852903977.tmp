@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://cua0q0aew63mh"]
+
+[ext_resource type="PackedScene" uid="uid://b1r8rboaf0wvx" path="res://scenes/enemies/policia.tscn" id="1_a3ws7"]
+[ext_resource type="Script" uid="uid://bw0g2ruhrs3w6" path="res://scripts/player/camara.gd" id="1_jvuwd"]
+[ext_resource type="PackedScene" uid="uid://dy8lnes4shkbk" path="res://scenes/player/delorean.tscn" id="1_k3rtj"]
+[ext_resource type="PackedScene" uid="uid://dju823glcn58k" path="res://scenes/ui/GUI_Dialog.tscn" id="1_litjp"]
+[ext_resource type="Script" uid="uid://bhysxje3cwsbh" path="res://scripts/main/Level.gd" id="1_mn2x6"]
+[ext_resource type="Texture2D" uid="uid://biiqb31plrh60" path="res://assets/sprites/level/back.png" id="2_p0fye"]
+[ext_resource type="AudioStream" uid="uid://bw211avjgyjf4" path="res://assets/sfx/Focus - Hocus Pocus (Dubstep Remix).wav" id="3_5n3p8"]
+[ext_resource type="Texture2D" uid="uid://bqbehbcfbfduu" path="res://assets/sprites/level/middle.png" id="4_jvuwd"]
+[ext_resource type="Texture2D" uid="uid://cvhojp3n5ojgc" path="res://assets/sprites/level/foreground.png" id="5_5n3p8"]
+[ext_resource type="PackedScene" uid="uid://cc7e4jdblk4ks" path="res://scenes/ui/in_game_hud.tscn" id="6_litjp"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player_car", "police_car", "in_game_hud", "gui_dialog")]
+script = ExtResource("1_mn2x6")
+player_car = NodePath("Delorean")
+police_car = NodePath("Policia")
+in_game_hud = NodePath("InGameHUD")
+gui_dialog = NodePath("GuiDialog")
+
+[node name="Policia" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_a3ws7")]
+position = Vector2(505, 420)
+scale = Vector2(0.5, 0.5)
+target = NodePath("../Delorean")
+
+[node name="Delorean" parent="." instance=ExtResource("1_k3rtj")]
+position = Vector2(133, 410)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Delorean"]
+position = Vector2(374, -342)
+scale = Vector2(2, 2)
+script = ExtResource("1_jvuwd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Delorean"]
+position = Vector2(-266, -820)
+scale = Vector2(2, 2)
+stream = ExtResource("3_5n3p8")
+volume_db = -5.049
+autoplay = true
+attenuation = 2.0705304
+panning_strength = 0.88
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(638, 0)
+
+[node name="Back" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 640.0
+offset_bottom = 480.0
+texture = ExtResource("2_p0fye")
+expand_mode = 1
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(638, 0)
+
+[node name="Back" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_right = 640.0
+offset_bottom = 480.0
+texture = ExtResource("4_jvuwd")
+expand_mode = 1
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(638, 0)
+
+[node name="Back" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_right = 640.0
+offset_bottom = 480.0
+texture = ExtResource("5_5n3p8")
+expand_mode = 1
+
+[node name="InGameHUD" parent="." instance=ExtResource("6_litjp")]
+follow_viewport_enabled = false
+
+[node name="GuiDialog" parent="." instance=ExtResource("1_litjp")]

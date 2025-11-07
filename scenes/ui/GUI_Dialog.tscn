@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dju823glcn58k"]
+
+[ext_resource type="Script" uid="uid://bc5clu3mnt4jm" path="res://scripts/ui/GuiDialog.gd" id="1_13s0g"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="3_13s0g"]
+[ext_resource type="AudioStream" uid="uid://c8okmmtvnio4g" path="res://assets/sfx/notificacion.mp3" id="4_sol0j"]
+
+[node name="GuiDialog" type="CanvasLayer" node_paths=PackedStringArray("name_label", "text_label", "avatar_texture", "typewriter_sound", "dialog_node")]
+script = ExtResource("1_13s0g")
+name_label = NodePath("Panel/Name")
+text_label = NodePath("Panel/Text")
+avatar_texture = NodePath("Panel/Avatar")
+typewriter_sound = NodePath("TypewriterSound")
+dialog_node = NodePath("Panel")
+typewriter_speed = null
+fade_duration = null
+
+[node name="TypewriterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sol0j")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 40.0
+offset_top = 23.0
+offset_right = 465.0
+offset_bottom = 86.0
+
+[node name="Text" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 67.0
+offset_top = 22.0
+offset_right = -11.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_13s0g")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"
+
+[node name="Name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 2.0
+offset_right = 192.0
+offset_bottom = 25.0
+
+[node name="Avatar" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 63.0

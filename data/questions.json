@@ -1,34 +1,81 @@
 {
   "questions": [
     {
-      "question": "¿Qué protocolo se utiliza comúnmente para la transferencia segura de archivos?",
-      "answers": ["FTP", "HTTP", "SFTP", "SMTP"],
-      "correct_answer_index": 2
-    },
-    {
-      "question": "En programación, ¿qué significa 'DRY'?",
+      "type": "single_choice",
+      "question": "Agente: ¡Cifra! Se le acusa de acceder a un sistema sin la debida autorización. ¿Cómo se defiende?",
       "answers": [
-        "Data Relay Yield",
-        "Don't Repeat Yourself",
-        "Direct Rendering Yoke",
-        "Debug, Review, Yield"
+        "A: Mi acceso fue excediendo una autorización previa, no sin ella, lo cual es una pena menor.",
+        "B: El sistema no tenía medidas de seguridad, por lo tanto, no es acceso indebido.",
+        "C: Solo estaba 'mirando', no interactué con el sistema.",
+        "D: La ley no aplica si el sistema está fuera del territorio nacional."
       ],
-      "correct_answer_index": 1
+      "correct_answer_index": 0
     },
     {
-      "question": "¿Cuál de los siguientes NO es un lenguaje de programación?",
-      "answers": ["Python", "HTML", "Java", "C++"],
-      "correct_answer_index": 1
-    },
-    {
-      "question": "¿Qué es un 'ataque de fuerza bruta'?",
+      "type": "percentage_choice",
+      "question": "Agente: ¡Interceptación de comunicaciones! ¿Cómo intenta evadir la acusación con un argumento arriesgado?",
       "answers": [
-        "Un virus que daña el hardware",
-        "Engañar a alguien para que revele su contraseña",
-        "Inundar un servidor con tráfico",
-        "Probar sistemáticamente todas las contraseñas posibles"
+        {
+          "text": "A: Argumento de 'mensaje de datos' no explícito, sino encriptado y sin significado asignado. (70% éxito)",
+          "success_chance": 70
+        },
+        {
+          "text": "B: Alegar que la 'señal de transmisión' no era ajena, sino un error de enrutamiento propio. (40% éxito)",
+          "success_chance": 40
+        },
+        {
+          "text": "C: Afirmar que solo 'accedí', no 'capturé' ni 'interferí' la comunicación. (20% éxito)",
+          "success_chance": 20
+        },
+        {
+          "text": "D: Negar el uso de 'tecnologías de información' para la interceptación. (5% éxito)",
+          "success_chance": 5
+        }
+      ]
+    },
+    {
+      "type": "single_choice",
+      "question": "Agente: ¡Sabotaje! Ha destruido información vital en un sistema. ¿Cuál es su defensa?",
+      "answers": [
+        "A: La información no era 'data' o 'información' según la definición legal, sino meros caracteres sin significado asignado.",
+        "B: Mi intención no era destruir, solo 'modificar' temporalmente.",
+        "C: El sistema ya estaba dañado antes de mi intervención.",
+        "D: No usé un virus, así que la pena es menor."
       ],
-      "correct_answer_index": 3
+      "correct_answer_index": 0
+    },
+    {
+      "type": "percentage_choice",
+      "question": "Agente: ¡Posesión de equipos de sabotaje! ¿Qué estrategia legal usa para justificar sus herramientas?",
+      "answers": [
+        {
+          "text": "A: Las herramientas son de 'uso general' y no tienen el 'propósito' exclusivo de vulnerar seguridad. (60% éxito)",
+          "success_chance": 60
+        },
+        {
+          "text": "B: No las 'importé, fabriqué, distribuí ni vendí', solo las 'encontré'. (30% éxito)",
+          "success_chance": 30
+        },
+        {
+          "text": "C: El sistema que se pretendía vulnerar no utiliza 'tecnologías de información'. (15% éxito)",
+          "success_chance": 15
+        },
+        {
+          "text": "D: Alegar que el 'propósito' era mejorar la seguridad, no vulnerarla. (5% éxito)",
+          "success_chance": 5
+        }
+      ]
+    },
+    {
+      "type": "single_choice",
+      "question": "Agente: ¡Espionaje informático! Obtuvo y difundió data reservada. ¿Cómo se libra?",
+      "answers": [
+        "A: La data obtenida no estaba 'contenida en un sistema', sino en un dispositivo externo no conectado.",
+        "B: No obtuve ningún beneficio económico, por lo que la pena no se agrava.",
+        "C: La información ya era de dominio público, no reservada.",
+        "D: Solo la obtuve, no la revelé ni difundí."
+      ],
+      "correct_answer_index": 0
     }
   ]
 }

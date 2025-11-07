@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc7e4jdblk4ks"]
+
+[ext_resource type="Script" uid="uid://cyafhoe4ujyv6" path="res://scripts/ui/HUD.gd" id="1_7q0fu"]
+[ext_resource type="PackedScene" uid="uid://bo45njai5ommj" path="res://scenes/levels/laptop.tscn" id="2_7q0fu"]
+[ext_resource type="Texture2D" uid="uid://cja6yq5nxe4ep" path="res://assets/sprites/progressbar/empty health bar.png" id="3_vfw1c"]
+[ext_resource type="Texture2D" uid="uid://fuu4qsvf08m0" path="res://assets/sprites/progressbar/no health bar.png" id="4_tw8e3"]
+[ext_resource type="Texture2D" uid="uid://cwrtkqw5hc7b7" path="res://assets/sprites/progressbar/health bar.png" id="5_sycbo"]
+
+[node name="InGameHUD" type="CanvasLayer" node_paths=PackedStringArray("time_bar", "warning_indicators_container", "distance_label", "question_label", "answers_container")]
+follow_viewport_enabled = true
+script = ExtResource("1_7q0fu")
+time_bar = NodePath("TimerBar")
+warning_indicators_container = NodePath("WarningIndicators")
+distance_label = NodePath("DistanceLabel")
+question_label = NodePath("QuestionPanel/QuestionLabel")
+answers_container = NodePath("QuestionPanel/AnswersBox")
+
+[node name="Laptop" parent="." instance=ExtResource("2_7q0fu")]
+modulate = Color(0.84313726, 0.84313726, 0.84313726, 0.8509804)
+position = Vector2(153, 221)
+
+[node name="DistanceLabel" type="Label" parent="."]
+offset_left = 510.0
+offset_top = 16.0
+offset_right = 601.0
+offset_bottom = 39.0
+
+[node name="QuestionPanel" type="Panel" parent="."]
+offset_left = 320.0
+offset_top = 39.0
+offset_right = 601.0
+offset_bottom = 327.0
+
+[node name="QuestionLabel" type="Label" parent="QuestionPanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 259.0
+offset_bottom = 132.0
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
+
+[node name="AnswersBox" type="VBoxContainer" parent="QuestionPanel"]
+custom_minimum_size = Vector2(0, 93)
+layout_mode = 0
+offset_left = 18.0
+offset_top = 156.0
+offset_right = 259.0
+offset_bottom = 249.0
+
+[node name="AnswerButton1" type="Button" parent="QuestionPanel/AnswersBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_font_sizes/font_size = 8
+alignment = 0
+autowrap_mode = 3
+clip_text = true
+
+[node name="AnswerButton2" type="Button" parent="QuestionPanel/AnswersBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+alignment = 0
+autowrap_mode = 3
+clip_text = true
+
+[node name="AnswerButton3" type="Button" parent="QuestionPanel/AnswersBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+alignment = 0
+autowrap_mode = 3
+clip_text = true
+
+[node name="AnswerButton4" type="Button" parent="QuestionPanel/AnswersBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+alignment = 0
+autowrap_mode = 3
+clip_text = true
+
+[node name="TimerBar" type="TextureProgressBar" parent="."]
+offset_left = 22.0
+offset_top = 5.0
+offset_right = 283.0
+offset_bottom = 32.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_vfw1c")
+texture_over = ExtResource("4_tw8e3")
+texture_progress = ExtResource("5_sycbo")
+
+[node name="WarningIndicators" type="HBoxContainer" parent="."]
+offset_left = 101.0
+offset_top = 327.0
+offset_right = 193.0
+offset_bottom = 367.0
+
+[node name="TextureRect" type="TextureRect" parent="WarningIndicators"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="WarningIndicators"]
+layout_mode = 2

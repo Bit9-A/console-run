@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo45njai5ommj"]
+
+[ext_resource type="Texture2D" uid="uid://bh41xx5jdxd6h" path="res://assets/sprites/level/laptop.png" id="1_jqydp"]
+[ext_resource type="Script" uid="uid://sbauut8vexer" path="res://addons/GameGUI/GGLabel.gd" id="2_0h7ro"]
+[ext_resource type="FontFile" uid="uid://bfmsaoba6bqb" path="res://assets/fonts/PixelAE-Regular.ttf" id="2_2uwko"]
+
+[node name="Laptop" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4.7683716e-07)
+scale = Vector2(0.718, 0.604)
+texture = ExtResource("1_jqydp")
+
+[node name="TextI" type="Label" parent="."]
+offset_left = -99.0
+offset_top = -80.0
+offset_right = -73.0
+offset_bottom = -50.0
+theme_override_colors/font_color = Color(0.4, 0.45490196, 0.81960785, 1)
+theme_override_fonts/font = ExtResource("2_2uwko")
+theme_override_font_sizes/font_size = 20
+text = "C:/"
+script = ExtResource("2_0h7ro")
+vertical_mode = 5
+layout_size = Vector2(0, 23)
+is_configured = true
+metadata/_custom_type_script = "uid://sbauut8vexer"
+
+[node name="Text" type="Label" parent="."]
+offset_left = -72.0
+offset_top = -80.0
+offset_right = -46.0
+offset_bottom = -50.0
+theme_override_colors/font_color = Color(0.4, 0.45490196, 0.81960785, 1)
+theme_override_fonts/font = ExtResource("2_2uwko")
+theme_override_font_sizes/font_size = 20
+text = "..."
+script = ExtResource("2_0h7ro")
+vertical_mode = 5
+layout_size = Vector2(0, 23)
+is_configured = true
+metadata/_custom_type_script = "uid://sbauut8vexer"

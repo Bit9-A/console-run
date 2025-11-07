@@ -41,10 +41,11 @@ func get_new_question() -> Dictionary:
 	if questions.is_empty():
 		# Si después de recargar sigue vacío, es que no hay preguntas en el archivo.
 		return {
+			"type": "single_choice", # Añadimos el tipo por defecto
 			"question": "ERROR: No hay preguntas disponibles.",
 			"answers": ["A", "B", "C", "D"],
 			"correct_answer_index": 0
 		}
 
 	# Saca la última pregunta del array y la devuelve.
-	return questions.pop_back()
+	return questions.pop_front() # Usamos pop_front para mantener el orden si no se mezcla

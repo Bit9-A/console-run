@@ -14,11 +14,11 @@ extends CharacterBody2D
 # --- Variables de Persecución ---
 @export var target: Node2D = null # El nodo del jugador, se asignará desde la escena
 @export var follow_distance: float = 200.0 # Distancia que intenta mantener detrás del jugador
-@export var catch_up_speed_factor: float = 1.1 # Qué tan rápido acelera para alcanzar al jugador
+@export var catch_up_speed_factor: float = 1.02 # Qué tan rápido acelera para alcanzar al jugador
 @export var lunge_speed_boost: float = 400.0 # Boost de velocidad extra durante la embestida
 @export var lunge_duration: float = 0.5      # Duración de la embestida en segundos
 
-var current_speed: float = 0.0
+var current_speed: float = 10
 var is_lunging: bool = false
 var lunge_timer: Timer
 
@@ -36,7 +36,7 @@ func _physics_process(delta):
 		
 		# Calculamos la velocidad objetivo de la patrulla.
 		# Es la velocidad del jugador más un extra para alcanzarlo si está lejos.
-		var target_speed = target.velocity.x
+		var target_speed = target.get("base_speed") # Obtenemos la velocidad actual del jugador
 		if distance_to_target > follow_distance:
 			target_speed *= catch_up_speed_factor
 			

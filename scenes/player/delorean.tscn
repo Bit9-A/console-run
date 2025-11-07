@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b6oqh0n12vakk" path="res://scripts/player/PlayerCar.gd" id="1_wggbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5drgb"]
-size = Vector2(301, 83)
+size = Vector2(357, 83)
 
 [node name="Delorean" type="CharacterBody2D"]
 script = ExtResource("1_wggbe")
@@ -15,5 +15,7 @@ scale = Vector2(0.29980466, 0.3029297)
 texture = ExtResource("1_5drgb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.5, 31.5)
+position = Vector2(35.5, 31.5)
 shape = SubResource("RectangleShape2D_5drgb")
+
+[node name="EffectTimer" type="Timer" parent="."]
