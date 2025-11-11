@@ -1,48 +1,16 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://diyj4a32fkhan"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://diyj4a32fkhan"]
 
 [ext_resource type="FontFile" uid="uid://b3tw7nv8s1k8f" path="res://assets/fonts/CyberpunkCraftpixPixel (1).otf" id="1_l38aq"]
 [ext_resource type="StyleBox" uid="uid://b81vyc1xhe4kx" path="res://assets/Themes/Buttons Theme/ButtonTextureHover.tres" id="1_lw1ko"]
 [ext_resource type="StyleBox" uid="uid://cxpdoogkismdg" path="res://assets/Themes/Buttons Theme/ButtonTextureNormal.tres" id="2_l38aq"]
 [ext_resource type="StyleBox" uid="uid://ccy48ecy5t35" path="res://assets/Themes/Buttons Theme/ButtonTexturePressed.tres" id="3_cqrkh"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apkai"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qinyk"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l38aq"]
 
 [resource]
 Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("1_l38aq")
-Button/styles/disabled = SubResource("StyleBoxFlat_apkai")
-Button/styles/focus = SubResource("StyleBoxFlat_qinyk")
+Button/styles/focus = SubResource("StyleBoxEmpty_l38aq")
 Button/styles/hover = ExtResource("1_lw1ko")
 Button/styles/normal = ExtResource("2_l38aq")
 Button/styles/pressed = ExtResource("3_cqrkh")
