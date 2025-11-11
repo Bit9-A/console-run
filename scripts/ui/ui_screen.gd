@@ -1,0 +1,26 @@
+extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_start_pressed() :
+	Engine.time_scale = 0.0
+	print("Start Pressed")
+
+func _on_options_pressed():
+	print ("Options Pressed")
+
+func _on_exit_pressed():
+	print("Exit Pressed")
+
+
+func _on_button_pressed() -> void:
+	print("HOLA") # Replace with function body.
