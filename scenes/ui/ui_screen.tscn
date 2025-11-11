@@ -1,13 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://md1uigvqhepm"]
+[gd_scene load_steps=11 format=3 uid="uid://md1uigvqhepm"]
 
-[ext_resource type="Script" uid="uid://dfnyf41fepr54" path="res://addons/GameGUI/GGComponent.gd" id="1_8cmpg"]
 [ext_resource type="Texture2D" uid="uid://chcqb8e8q6v58" path="res://assets/sprites/backgrounds/foreground.png" id="1_rh0al"]
-[ext_resource type="Script" uid="uid://seh2spycuhp6" path="res://addons/GameGUI/GGTextureRect.gd" id="2_3oans"]
+[ext_resource type="Theme" uid="uid://diyj4a32fkhan" path="res://assets/Themes/Buttons Theme/ButtonTheme.tres" id="1_y7abp"]
 [ext_resource type="Texture2D" uid="uid://ddumhbd18i0qc" path="res://assets/sprites/backgrounds/back-buildings.png" id="2_nl70f"]
 [ext_resource type="Texture2D" uid="uid://b7jigcjvrxuwf" path="res://assets/sprites/backgrounds/far-buildings.png" id="3_rewdx"]
 [ext_resource type="AudioStream" uid="uid://dntp4hv5f81r1" path="res://assets/sfx/Max Brhon - Cyberpunk ｜ Bass ｜ NCS - Copyright Free Music.wav" id="4_rewdx"]
 [ext_resource type="Texture2D" uid="uid://cy7gxqtfo0wpp" path="res://assets/sprites/cars/carS1.png" id="6_3oans"]
 [ext_resource type="Script" uid="uid://cbo70jndt8v0l" path="res://addons/GameGUI/GGButton.gd" id="7_y7abp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3oans"]
+texture = ExtResource("3_rewdx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dv6ig"]
+texture = ExtResource("2_nl70f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7abp"]
+texture = ExtResource("1_rh0al")
 
 [node name="UIScreen" type="Control"]
 layout_mode = 3
@@ -20,27 +28,68 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rewdx")
+volume_db = -10.495
+autoplay = true
+
+[node name="PanelFar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3oans")
+
+[node name="PanelBack" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dv6ig")
+
+[node name="PanelFore" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y7abp")
+
+[node name="Car" type="Sprite2D" parent="."]
+position = Vector2(516, 419.99997)
+scale = Vector2(0.18203124, 0.19453122)
+texture = ExtResource("6_3oans")
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.5
-offset_top = -53.5
-offset_right = 80.5
-offset_bottom = 53.5
+offset_left = -53.5
+offset_top = -58.0
+offset_right = 53.5
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(1, 1)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
-theme_override_constants/separation = 7
+theme_override_constants/separation = 10
 
 [node name="Start" type="Button" parent="MenuButtons"]
 layout_mode = 2
+theme = ExtResource("1_y7abp")
 text = "Start"
 script = ExtResource("7_y7abp")
 layout_size = Vector2(1, 1)
@@ -49,6 +98,7 @@ metadata/_custom_type_script = "uid://cbo70jndt8v0l"
 
 [node name="Options" type="Button" parent="MenuButtons"]
 layout_mode = 2
+theme = ExtResource("1_y7abp")
 text = "Options"
 script = ExtResource("7_y7abp")
 layout_size = Vector2(1, 1)
@@ -57,90 +107,9 @@ metadata/_custom_type_script = "uid://cbo70jndt8v0l"
 
 [node name="Exit" type="Button" parent="MenuButtons"]
 layout_mode = 2
+theme = ExtResource("1_y7abp")
 text = "Exit"
 script = ExtResource("7_y7abp")
 layout_size = Vector2(1, 1)
 is_configured = true
 metadata/_custom_type_script = "uid://cbo70jndt8v0l"
-
-[node name="Container" type="Container" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_8cmpg")
-parameters = {
-"safe_area_bottom_margin": 0.0,
-"safe_area_left_margin": 0.0,
-"safe_area_right_margin": 0.0,
-"safe_area_top_margin": 0.0
-}
-metadata/_custom_type_script = "uid://dfnyf41fepr54"
-
-[node name="Background" type="TextureRect" parent="Container"]
-layout_mode = 2
-script = ExtResource("2_3oans")
-metadata/_custom_type_script = "uid://seh2spycuhp6"
-
-[node name="Far" type="TextureRect" parent="Container/Background"]
-z_index = -3
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_rewdx")
-expand_mode = 1
-script = ExtResource("2_3oans")
-horizontal_mode = 1
-vertical_mode = 1
-layout_size = Vector2(256, 192)
-is_configured = true
-metadata/_custom_type_script = "uid://seh2spycuhp6"
-
-[node name="Back" type="TextureRect" parent="Container/Background"]
-z_index = -2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_nl70f")
-expand_mode = 1
-script = ExtResource("2_3oans")
-horizontal_mode = 1
-vertical_mode = 1
-layout_size = Vector2(256, 192)
-is_configured = true
-metadata/_custom_type_script = "uid://seh2spycuhp6"
-
-[node name="Fore" type="TextureRect" parent="Container/Background"]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_rh0al")
-expand_mode = 1
-script = ExtResource("2_3oans")
-horizontal_mode = 1
-vertical_mode = 1
-layout_size = Vector2(352, 192)
-is_configured = true
-metadata/_custom_type_script = "uid://seh2spycuhp6"
-
-[node name="Car" type="Sprite2D" parent="Container/Background"]
-position = Vector2(501, 398.99997)
-scale = Vector2(0.18203124, 0.19453122)
-texture = ExtResource("6_3oans")
-
-[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_rewdx")
-volume_db = -10.495
-autoplay = true
